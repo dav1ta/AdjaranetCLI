@@ -9,6 +9,8 @@ mpv ფლეიერი
 cd AdjaranetCLI
 
 python main.py 
+
+შეგიძლიათ history.json-ში აირჩიოთ სასურველი ენა დეფაულტად
 # Options
 python main.py -n შემდეგი სერია
 
