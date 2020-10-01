@@ -25,9 +25,8 @@ class Settings:
 
     @staticmethod
     def if_setting_not_exists(atr, json_data):
-        if atr not in json_data:
-            return True
-        return False
+        return atr not in json_data
+       
 
     def check_if_settings_exists(self, filename):
         try:
