@@ -6,21 +6,21 @@ def safe_request_json(url):
     try:
         return requests.get(url).json()
     except Exception as e:
-        return {}
-
-
+    	print('კავშირის პრობლემა')
+        exit(0)
+       
 def play_video(source_url):
     subprocess.Popen(f"mpv {source_url} >>/dev/null &", shell=True)
 
 
 def search_film(keyword):
     adjaranet_api_uri = f"https://api.adjaranet.com/api/v1/search-advanced?movie_filters%5Bwith_actors%5D=3&movie_filters%5Bwith_directors%5D=1&movie_filters%5Bkeyword=&movie_filters%5Byear_range%5D=1900%2C2019&movie_filters%5Binit%5D=true&filters%5Btype%5D=movie&keywords={keyword}&page=1&per_page=15&source=adjaranet"
-    searched_films_json = safe_request_json(adjaranet_api_uri)['data']
+    searched_films_json = safe_request_json(adjaranet_api_uri)['data'] if safe_request_json(adjaranet_api_uri) else False
     if searched_films_json:
     	print('\n'.join([
                         f"{searched_films_json.index(movie) + 1}) {movie['primaryName']} - {movie['secondaryName']}  - {movie['year']} - {movie['rating']['imdb']['score']}"
                         for movie in searched_films_json]))
-    return searched_films_json if searched_films_json else False
+    return searched_films_json
 
 def check_film_seasons(data, selected_id, settings):
     film_id = data[selected_id]['id']
