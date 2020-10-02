@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from settings import Settings
 import sys
-from adjaranet import *
+from adjara import *
 
 
 def main():
