@@ -1,18 +1,33 @@
 # AdjaranetCLI
-adjaranet-ის ფილმები ტერმინალში
+adjaranet films terminal
 
 # Requirement
-requests პითონის ბიბლიოთეკა 
+pip install requests
 
-mpv ფლეიერი
-# Usage
-cd AdjaranetCLI
+```shell
+sudo pacman -S mpv 
+sudo apt install mpv
 
-python main.py 
+```
+# Run
+```shell
+python main.py
+```
+and choose film
 
-შეგიძლიათ history.json-ში აირჩიოთ სასურველი ენა დეფაულტად
-# Options
-python main.py -n შემდეგი სერია
 
-python main.py -p წინა სერია
+
+configure history.json choose preferred language and quality 
+film name as argument
+```shell
+python main.py film name
+```
+choose next episode
+```shell
+python main.py -n 
+```
+choose previous episode
+```shell
+python main.py -p
+```
 
