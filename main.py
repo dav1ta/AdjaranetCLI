@@ -30,7 +30,7 @@ def main():
     elif "-h" in opts:
         print("-n Next episode\n-p Previous episode \n-h help \n")
     else:
-        film_name = " ".join([ x for x in sys.argv[1:] if not x.startswith("-")]) if len(sys.argv[1:]) > 1 else input('ფილმის სახელი: ')
+        film_name = " ".join([ x for x in sys.argv[1:] if not x.startswith("-")]) if len(sys.argv[1:]) > 0 else input('ფილმის სახელი: ')
         movies_json = search_film(film_name)
         s.update_last_info('name', film_name)
         selected_film = int(input('აირჩიეთ ფილმის ნომერი: ')) - 1
