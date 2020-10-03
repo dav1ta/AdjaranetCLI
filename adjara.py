@@ -6,7 +6,7 @@ def safe_request_json(url):
     try:
         return requests.get(url).json()
     except Exception as e:
-    	print('კავშირის პრობლემა')
+        print('კავშირის პრობლემა')
         exit(0)
        
 def play_video(source_url):
