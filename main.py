@@ -6,8 +6,8 @@ from adjara import *
 
 def main():
     s = Settings()
-    s.check_if_settings_exists('history.json')
-    settings = s.read_json_file('history.json')
+    s.check_if_settings_exists('/home/davit/.local/history.json')
+    settings = s.read_json_file('/home/davit/.local/history.json')
     s.update_data(settings)
     opts = [opt for opt in sys.argv[1:] if opt.startswith("-")]
 
